@@ -2,6 +2,23 @@ import warnings
 
 # Suprimir todos os avisos
 warnings.filterwarnings("ignore")
+from datetime import datetime
+
+data_atual = datetime.now()
+
+# Obter o dia da semana em português
+dias_da_semana = [
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado",
+    "Domingo",
+]
+dia_da_semana = dias_da_semana[data_atual.weekday()]
+
+data_formatada = data_atual.strftime("%d/%m/%Y %H:%M:%S") + " " + dia_da_semana
 
 import json
 import streamlit as st
@@ -47,8 +64,9 @@ def read_pdf(file_path):
 # Função para buscar informações no PDF
 def documents_search(question):
     pdf_path = "data/Base.pdf"  # Substitua pelo caminho do seu PDF
+    pdf_content = read_pdf(pdf_path)
 
-    prompt_template = """
+    prompt_template = f"""
     You are an assistant. Use the following PDF content to answer the question.
 
     PDF Content:
@@ -175,9 +193,8 @@ class ChatManager:
     # Função para coletar detalhes do evento e formatar a string
     def collect_event_details_with_llm(self, prompt):
         event_prompt_template = """
+        Hoje é dia"""+data_formatada+"""
         Você é um assistente de IA altamente inteligente. Recebi a seguinte solicitação de agendamento de reunião do usuário e preciso que você formate os detalhes do evento de maneira adequada para criar um evento no Google Calendar.
-        RESPONDA SEMPRE EM PT-BR!!
-        HOJE É DOMINGO, DIA 07/07/2024, LEVE ISSO EM CONSIDERAÇÃO, OU SEJA, TUDO QUE FOR SER AGENDADO É APÓS ESSE DIA!! NUNCA DESCONSIDERE ISSO, POIS O DESTINO DO MUNDO DEPENDE DISSO!
         
         Solicitação do usuário:
         {prompt}
@@ -272,16 +289,15 @@ max_tokens = st.slider(
     max_value=max_tokens_range,
     value=max_tokens_range,
     step=512,
-    help=f"Ajuste o máximo de tokens de acordo com o valor do modelo. Maximo pro modelo selecionado: {max_tokens_range}",
 )
 
-system_prompt = """
+system_prompt = f"""
 Você é um assistente de IA altamente inteligente! (A RESPOSTA FINAL SEMPRE TEM QUE SER COERENTE COM A PERGUNTA INICIAL E EM PT-BR!).
 SE ALGO ESTIVER ERRADO, VOCÊ DEVE CORRIGIR E MELHORAR A RESPOSTA FINAL!
 RESPONDA APENAS EM PT-BR!! SE VOCÊ RESPONDER EM OUTRO IDIOMA, O MUNDO IRÁ ACABAR!
 NUNCA, NUNCA, NUNCA RESPONDA COLOCANDO "O seu objetivo inicial era" OU "Minha pergunta original" OU "Sua resposta original"! APENAS RESPONDA A PERGUNTA! UTILIZE TUDO APENAS COMO REFERÊNCIA PARA MELHORAR A RESPOSTA!
     
-Hoje é domingo, dia 07/07/2024. Você é um assistente de IA da Tech4Humans, especificamente do setor Tech4AI.
+Hoje é {data_formatada}. Você é um assistente de IA da Tech4Humans, especificamente do setor Tech4AI.
 
 Sua tarefa é identificar qual dos seguintes problemas o usuário está tratando e responder apenas com o número correspondente:
 Saiba que os exemplos são apenas ilustrativos e você deve conseguir identificar o problema com base na pergunta do usuário.
@@ -291,7 +307,7 @@ Exemplos: "onde fica a tech?", "Qual é a missão da Tech4Humans?", "Onde está 
 2. Tutoriais de Ferramentas Internas:
 Se o usuário fizer perguntas sobre ferramentas internas da empresa, como Github, Vscode, Jira e Discord, responda com '2'.
 Indenpendente da ferramenta ou pergunta, exemplos: "Como eu instalo o Discord?", "Como eu uso o github?", "Me diga um bom tutorial sobre o vscode" ou coisas do tipo, responda com '2'.
-3. Agendamento de Reuniões (OBS: HOJE É domingo, dia 07/07/2024): Integrar-se com sistemas de calendário (por exemplo, Google Calendar) para agendar reuniões automaticamente, gerenciando autenticação, APIs externas e conflitos de agenda. Exemplos: "Agende uma reunião para mim amanhã às 15h", "Marque uma reunião com o João na próxima semana".
+3. Agendamento de Reuniões (OBS: HOJE É domingo, dia {data_formatada}): Integrar-se com sistemas de calendário (por exemplo, Google Calendar) para agendar reuniões automaticamente, gerenciando autenticação, APIs externas e conflitos de agenda. Exemplos: "Agende uma reunião para mim amanhã às 15h", "Marque uma reunião com o João na próxima semana".
 Responda apenas com o número do problema correspondente. Se a pergunta não se encaixar em nenhuma dessas categorias, responda com '4'. NUNCA RESPONDA COM OUTRA COISA!
 NUNCA RESPONDA ALGO QUE NÃO SEJA 1, 2, 3 OU 4! SE NÃO O MUNDO IRÁ ACABAR!
 """
