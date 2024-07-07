@@ -5,7 +5,7 @@ warnings.filterwarnings("ignore")
 from datetime import datetime
 
 data_atual = datetime.now()
-
+print(data_atual)
 # Obter o dia da semana em português
 dias_da_semana = [
     "Segunda-feira",
@@ -116,7 +116,7 @@ def format_response(question, content, response_category):
         objective = "o seu objetivo inicial era pesquisar na internet sobre um determinado assunto e resumir!"
     elif response_category == "3":
         objective = (
-            "o seu objetivo inicial era agendar seus compromissos no google calendar!"
+            "o seu objetivo inicial era agendar seus compromissos no google calendar!" + "SAIBA QUE HOJE É " + data_formatada
         )
     else:
         objective = "O seu objetivo é avisar o usuário que a pergunta que ele fez é inválida, pois você só pode responder sobre a empresa Tech4Humans, recomendar tutoriais de ferramentas internas ou agendar reuniões."
@@ -193,7 +193,7 @@ class ChatManager:
     # Função para coletar detalhes do evento e formatar a string
     def collect_event_details_with_llm(self, prompt):
         event_prompt_template = """
-        Hoje é dia"""+data_formatada+"""
+        Hoje é dia """+data_formatada+"""
         Você é um assistente de IA altamente inteligente. Recebi a seguinte solicitação de agendamento de reunião do usuário e preciso que você formate os detalhes do evento de maneira adequada para criar um evento no Google Calendar.
         
         Solicitação do usuário:
