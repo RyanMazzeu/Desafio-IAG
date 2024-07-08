@@ -485,5 +485,5 @@ Para dúvidas ou sugestões, entre em contato:
 
 * Dependendo de como a pergunta sobre a empresa é feita a ia responde aleatóriamente!
 * O agendamento, se mal explicado na requisição, dá erro!
-* As pesquisas de tutoriais na internet não estão nem perto de serem perfeitas, pois, dependendo do que o bot retorna, a ia não consegue extrair informações o suficiente para formar uma resposta descente.
+* As pesquisas de tutoriais na internet não estão nem perto de serem perfeitas, uma vez que dependendo do que o bot retorna, a ia não consegue extrair informações o suficiente para formar uma resposta descente.
   
