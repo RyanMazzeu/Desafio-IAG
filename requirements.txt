@@ -1,2 +1,12 @@
 groq
 streamlit
+langchain
+langchain_community
+transformers
+python-dotenv
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
+pymupdf
+huggingface_hub
