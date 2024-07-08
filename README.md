@@ -83,7 +83,7 @@ Crie um arquivo chamado .env na raiz do seu projeto com as seguintes chaves (ser
 Como consegui-las:
 
 * https://console.groq.com/keys
-* https://console.cloud.google.com/apis/credentials?authuser=1&project=tech4humans&supportedpurview=project
+* https://console.cloud.google.com/apis/credentials
 * https://programmablesearchengine.google.com/
 * https://huggingface.co/settings/tokens
 
