@@ -68,7 +68,7 @@ Agendamento de reuniões
 #### Instalar as Dependências Necessárias
 Instale todas as bibliotecas e ferramentas mencionadas no código:
 
-    pip install streamlit python-dotenv google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client langchain pymupdf huggingface_hub groq
+    pip install streamlit python-dotenv google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client pymupdf huggingface_hub groq langchain langchain_community streamlit transformers
 
 ### Configuração de Variáveis de Ambiente
 
