@@ -23,9 +23,7 @@ Este README documenta o projeto TechLab Agentes, desenvolvido para criar um agen
 
 ## Demonstração
 
-* **Imagens:** Inclua imagens que mostrem as funcionalidades do seu projeto em ação.
-* **GIFs:** Utilize GIFs para animações curtas e demonstrativas.
-* **Vídeos:** Crie vídeos tutoriais ou demonstrações mais completas.
+* 
 
 ## Instalação e Uso
 
@@ -463,41 +461,9 @@ Para dúvidas ou sugestões, entre em contato:
 * Utilize ferramentas e recursos para facilitar a criação e atualização do README.
 
 
-## Uso/Exemplos
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
 ## Erros/Defeitos encontrados
 
-Para rodar os testes, rode o seguinte comando
 
-```bash
-  npm run test
-```
-
-
-## Outras seções comuns em perfis do GitHub
-👩‍💻 Trabalho atualmente na/no...
-
-🧠 Estou aprendendo...
-
-👯‍♀️ Procuro colaborar em...
-
-🤔 Procuro ajuda com...
-
-💬 Me pergunte sobre...
-
-📫 Como entrar em contato comigo...
-
-😄 Pronomes...
-
-⚡️ Fatos engraçados...
 
 
 ## 🚀 Sobre mim
