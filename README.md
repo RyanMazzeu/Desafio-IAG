@@ -464,8 +464,3 @@ Para dúvidas ou sugestões, entre em contato:
 ## Erros/Defeitos encontrados
 
 
-
-
-## 🚀 Sobre mim
-Eu sou uma pessoa desenvolvedora full-stack...
-
