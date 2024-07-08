@@ -22,8 +22,32 @@ Este README documenta o projeto TechLab Agentes, desenvolvido para criar um agen
 
 
 ## Demonstração
+O projeto consiste em um chat-bot que simula um funcionário da empresa Tech4humans, portanto eu não me preocupei tanto com o visual (utilizei apenas a interface padrão fornecida pela biblioteca streamlit)
 
-* 
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/9a5f8464-b6fd-49ac-8f16-4d914caf7ef2)
+OBS: Não me preocupei em deixar o bot online. Portanto, esse tutorial apenas sobe o bot com um URL Local (roda apenas no próprio pc) e um Network URL (roda em todos os dispositivos conectados na mesma rede)
+
+Exemplos de cada funcionalidade:
+
+Mensagens adversas que fogem do escopo do bot:
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/dc5b4059-ce42-4b47-8108-0306550b9a2f)
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/30d3cf74-8bc7-4bfb-8062-19b427888f7c)
+
+Perguntas sobre a empresa (PDF):
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/ae886f63-fa34-47f3-ba3d-36bec69cb390)
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/2bc5fd11-2a69-4c1d-bcfb-b99d0700a31d)
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/31ed7cee-b524-4e45-a97e-00606030fdb4)
+
+Tutoriais sobre ferramentas internas (A partir de acesso à internet):
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/b308d98d-b041-4530-bc86-3aea3062634c)
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/00aaf75c-b19c-4407-bc6e-39b777672aa9)
+
+Agendamento de reuniões
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/ffe8dec8-a576-43e3-b3d6-08c6476dcece)
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/de09ab7c-5018-405b-811a-1b446c36d03a)
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/80b1f3d2-cd51-4309-9fad-f58f404bb413)
+![image](https://github.com/RyanMazzeu/Desafio-IAG/assets/104333277/e8063e7b-44dc-4220-b97f-5d6bdea2f77a)
+
 
 ## Instalação e Uso
 
@@ -454,13 +478,12 @@ Para dúvidas ou sugestões, entre em contato:
 
 ## Observações
 
-* Obs 1
-* Utilize linguagem clara, concisa e profissional.
-* Apresente uma formatação visual atraente e organizada.
-* Inclua exemplos e casos de uso para demonstrar o valor do seu projeto.
-* Utilize ferramentas e recursos para facilitar a criação e atualização do README.
-
+* O bot não é perfeito! Devido a data e prazo estabelecidos, que coincidiram com o final de semestre na faculdade, não tive muito tempo para ficar aperfeiçoando os prompts.
+* As respostas sobre a empresa são fracas, pois o documento pdf divulgado também é. Por isso acrescentei algumas informações da internet no próprio prompt.
 
 ## Erros/Defeitos encontrados
 
-
+* Dependendo de como a pergunta sobre a empresa é feita a ia responde aleatóriamente!
+* O agendamento, se mal explicado na requisição, dá erro!
+* As pesquisas de tutoriais na internet não estão nem perto de serem perfeitas, pois, dependendo do que o bot retorna, a ia não consegue extrair informações o suficiente para formar uma resposta descente.
+  
